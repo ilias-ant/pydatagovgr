@@ -13,14 +13,6 @@ def client():
     return client.DataGovClient(token="xoxb-1234-1243")
 
 
-def request_callback(request):
-    def foo():
-        raise ValueError
-
-    breakpoint()
-    return 200, request.headers, foo
-
-
 class TestDataGovClient:
     @staticmethod
     def assert_proper_api_call():
@@ -81,7 +73,7 @@ class TestDataGovClient:
             responses.GET,
             url="https://data.gov.gr/api/v1/query/mdg_emvolio",
             json=expected_content,
-            status=200,
+            status=200
         )
 
         res = client.query("mdg_emvolio", date_from="2021-01-01", date_to="2021-12-31")
@@ -101,7 +93,7 @@ class TestDataGovClient:
             responses.GET,
             url="https://data.gov.gr/api/v1/query/mdg_emvolio",
             json=expected_content,
-            status=200,
+            status=200
         )
 
         res = client.query(
@@ -123,7 +115,7 @@ class TestDataGovClient:
             responses.GET,
             url="https://data.gov.gr/api/v1/query/mdg_emvolio",
             body="this-aint-json",  # response.json() will fail
-            status=200,
+            status=200
         )
 
         with pytest.raises(exceptions.DataGovResponseError) as exc:
