@@ -28,7 +28,13 @@ jobs:
         pip install poetry
         poetry update
         poetry install
-        poetry run pytest --cov=./ --cov-report=xml
-    - name: Test with pytest
+    - name: Run Tests
       run: |
-        poetry run pytest
+        poetry run pytest --cov=./ --cov-report=xml
+    - name: Upload Coverage Report
+      uses: codecov/codecov-action@v1
+      with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage.xml
+          flags: unittests
+          fail_ci_if_error: true
