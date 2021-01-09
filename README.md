@@ -89,6 +89,7 @@ Apart from the authentication token, you can also configure the timeout and retr
 ```python
 from pydatagovgr import DataGovClient
 
+
 # this client will stop waiting for a response after 7 seconds 
 gov_client = DataGovClient(token='xoxb-1234-1243', timeout=7)
 
