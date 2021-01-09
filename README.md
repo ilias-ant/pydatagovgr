@@ -1,6 +1,6 @@
 # pydatagovgr
 
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+![PyPI](https://img.shields.io/pypi/v/pydatagovgr) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pydatagovgr) ![PyPI - Wheel](https://img.shields.io/pypi/wheel/pydatagovgr) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 
 An unofficial Pythonic client for the official [data.gov.gr](https://data.gov.gr) API. Aims to be an easy, intuitive and out-of-the-box way to:
