@@ -5,6 +5,10 @@ class DataGovClient(BaseClient):
     """A DataGovClient allows apps to communicate with the Hellenic Government's open-data API (data.gov.gr)
     The data.gov.gr API is an interface for querying data published by central government, local authorities
     and public bodies to help you build products and services.
+
+    Note:
+        Any attributes or methods prefixed with _underscores are forming a so called
+        "private" API, and is for internal use only. They may be changed or removed at anytime.
     """
 
     def query(self, dataset: str, **kwargs) -> list:

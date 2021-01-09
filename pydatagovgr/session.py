@@ -1,20 +1,10 @@
-import logging
-
 import requests
 
 from .exceptions import DataGovResponseError
 
 
-logging.basicConfig()  # you need to initialize logging, otherwise you will not see anything from requests
-logging.getLogger().setLevel(logging.CRITICAL)
-requests_log = logging.getLogger("requests.packages.urllib3")
-requests_log.setLevel(logging.DEBUG)
-requests_log.propagate = True
-
-
 class DataGovSession(requests.Session):
-    """
-    This is a very thin wrapper around the requests Session object which allows
+    """This is a very thin wrapper around the requests Session object which allows
     us to wrap the response handler in order to handle it in a data.gov.gr way.
     """
 

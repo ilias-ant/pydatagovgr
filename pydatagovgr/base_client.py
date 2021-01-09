@@ -8,8 +8,7 @@ from .session import DataGovSession
 
 
 class BaseClient(object):
-    """This client handles constructing and sending HTTP requests to data.gov.gr as well as parsing
-    any responses received into a `DataGovResponse`.
+    """This client handles constructing and sending HTTP requests to data.gov.gr.
 
     Attributes:
         token (str): A string specifying an xoxp or xoxb token.
@@ -18,9 +17,8 @@ class BaseClient(object):
         timeout (int): The maximum number of seconds the client will wait
             to connect and receive a response from data.gov.gr.
             Default is 30 seconds.
-        Note:
-            Any attributes or methods prefixed with _underscores are forming a so called
-            "private" API, and is for internal use only. They may be changed or removed at anytime.
+        max_retries (int): The maximum number of retries in case of unsuccessful request.
+        Defaults to 3.
     """
 
     BASE_URL = "https://data.gov.gr/api/v1/"
@@ -41,8 +39,7 @@ class BaseClient(object):
 
     def _get_headers(self):
         """Constructs the headers need for a request.
-        Parameters:
-            token: the authorization token.
+
         Returns:
             The headers dictionary.
                 e.g. {
@@ -54,11 +51,21 @@ class BaseClient(object):
         return headers
 
     def _build_url(self, endpoint: str) -> str:
-        """Joins the base data.gov.gr and an `endpoint` to form an absolute URL."""
+        """Joins the base data.gov.gr and an `endpoint` to form an absolute URL.
+
+        Returns:
+            The built URL.
+                e.g. 'https://data.gov.gr/api/v1/query/mdg_emvolio'
+        """
+
         return urljoin(self.BASE_URL, endpoint)
 
     def _init_session(self) -> DataGovSession:
-        """Initializes a DataGovSession and adapts several policies."""
+        """Initializes a DataGovSession and adapts several policies.
+
+        Returns:
+            The DataGovSession object.
+        """
         retry_strategy = Retry(
             total=self.max_retries,
             backoff_factor=2,  # 1, 2, 4, 8, 16, 32, 64, 128, 256, ... seconds
