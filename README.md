@@ -79,7 +79,9 @@ You can also use Python objects as arguments:
 import datetime
 
 
-data = gov_client.query('mdg_emvolio', date_from=datetime.date(2021, 1, 1), date_to=datetime.date(1, 12, 31))
+data = gov_client.query('mdg_emvolio', 
+                        date_from=datetime.date(2021, 1, 1), 
+                        date_to=datetime.date(1, 12, 31))
 ```
 
 Apart from the authentication token, you can also configure the timeout and retry policies of your client. For example: 
@@ -91,7 +93,7 @@ from pydatagovgr import DataGovClient
 gov_client = DataGovClient(token='xoxb-1234-1243', timeout=7)
 
 # this client will retry at most 3 times, with an exponential-backoff
-# (i.e. each retry waits exponentially longer before occurs: 1, 2, 4, 8, 16, 32, 64, 128, 256, ... seconds)
+# (i.e. each retry waits exponentially longer before occurs: 1, 2, 4, 8, 16, 32, 64, ... seconds)
 gov_client = DataGovClient(token='xoxb-1234-1243', max_retries=3)
 
 # this client will respect both a timeout policy and a retry policy
