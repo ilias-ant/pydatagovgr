@@ -1,6 +1,6 @@
 # pydatagovgr
 
-![PyPI](https://img.shields.io/pypi/v/pydatagovgr) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pydatagovgr) [![codecov](https://codecov.io/gh/ilias-ant/pydatagovgr/branch/main/graph/badge.svg?token=2H0VB8I8IH)](https://codecov.io/gh/ilias-ant/pydatagovgr) ![PyPI - Wheel](https://img.shields.io/pypi/wheel/pydatagovgr) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![PyPI](https://img.shields.io/pypi/v/pydatagovgr)](https://pypi.org/project/pydatagovgr/) [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pydatagovgr)](https://www.python.org/) [![codecov](https://codecov.io/gh/ilias-ant/pydatagovgr/branch/main/graph/badge.svg?token=2H0VB8I8IH)](https://codecov.io/gh/ilias-ant/pydatagovgr) [![PyPI - Wheel](https://img.shields.io/pypi/wheel/pydatagovgr)](https://www.python.org/dev/peps/pep-0427/) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ilias-ant/pydatagovgr/Python%20package)
 
 
 An unofficial Pythonic client for the official [data.gov.gr](https://data.gov.gr) API. Aims to be an easy, intuitive and out-of-the-box way to:
