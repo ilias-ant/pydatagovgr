@@ -37,7 +37,7 @@ class BaseClient(object):
         self.headers = self._get_headers()
         self.session = self._init_session()
 
-    def _get_headers(self):
+    def _get_headers(self) -> dict:
         """Constructs the headers need for a request.
 
         Returns:
@@ -46,9 +46,8 @@ class BaseClient(object):
                     'Authorization': 'Token xoxb-1234-1243',
                 }
         """
-        headers = {"Authorization": f"Token {self.token}"}
 
-        return headers
+        return {"Authorization": f"Token {self.token}"}
 
     def _build_url(self, endpoint: str) -> str:
         """Joins the base data.gov.gr and an `endpoint` to form an absolute URL.
