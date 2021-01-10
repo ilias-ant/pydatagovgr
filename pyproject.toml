@@ -1,10 +1,26 @@
 [tool.poetry]
 name = "pydatagovgr"
-version = "0.1.2"
+version = "0.1.3"
 description = "A Pythonic client for the official https://data.gov.gr API."
 authors = ["ilias-ant <ilias.antonopoulos@yahoo.gr>"]
 readme = "README.md"
 license = "MIT"
+homepage = "https://pypi.org/project/pydatagovgr"
+repository = "https://github.com/ilias-ant/pydatagovgr"
+keywords = ["client", "pip", "govgr", "open-data"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Science/Research",
+    "Natural Language :: English",
+    "Natural Language :: Greek",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/ilias-ant/pydatagovgr/issues"
 
 [tool.poetry.dependencies]
 python = "^3.7"
