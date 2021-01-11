@@ -22,10 +22,7 @@ class TestDataGovClient:
         assert len(responses.calls) == 1
         # with the proper headers
         assert "Authorization" in responses.calls[0].request.headers
-        assert (
-            responses.calls[0].request.headers["Authorization"]
-            == "Token xoxb-1234-1243"
-        )
+        assert responses.calls[0].request.headers["Authorization"] == "Token xoxb-1234-1243"
         assert responses.calls[0].request.headers["Connection"] == "keep-alive"
 
     @responses.activate
@@ -73,16 +70,14 @@ class TestDataGovClient:
             responses.GET,
             url="https://data.gov.gr/api/v1/query/mdg_emvolio",
             json=expected_content,
-            status=200
+            status=200,
         )
 
         res = client.query("mdg_emvolio", date_from="2021-01-01", date_to="2021-12-31")
 
         self.assert_proper_api_call()
         assert res == expected_content
-        assert {"date_from": "2021-01-01", "date_to": "2021-12-31"} == responses.calls[
-            0
-        ].request.params
+        assert {"date_from": "2021-01-01", "date_to": "2021-12-31"} == responses.calls[0].request.params
 
     @responses.activate
     def test_query_dataset_successful_with_pythonic_params(self, client):
@@ -93,7 +88,7 @@ class TestDataGovClient:
             responses.GET,
             url="https://data.gov.gr/api/v1/query/mdg_emvolio",
             json=expected_content,
-            status=200
+            status=200,
         )
 
         res = client.query(
@@ -104,9 +99,7 @@ class TestDataGovClient:
 
         self.assert_proper_api_call()
         assert res == expected_content
-        assert {"date_from": "2021-01-01", "date_to": "2021-12-31"} == responses.calls[
-            0
-        ].request.params
+        assert {"date_from": "2021-01-01", "date_to": "2021-12-31"} == responses.calls[0].request.params
 
     @responses.activate
     def test_query_dataset_invalid_json_content(self, client):
@@ -115,7 +108,7 @@ class TestDataGovClient:
             responses.GET,
             url="https://data.gov.gr/api/v1/query/mdg_emvolio",
             body="this-aint-json",  # response.json() will fail
-            status=200
+            status=200,
         )
 
         with pytest.raises(exceptions.DataGovResponseError) as exc:
