@@ -68,8 +68,7 @@ class BaseClient(object):
         retry_strategy = Retry(
             total=self.max_retries,
             backoff_factor=2,  # 1, 2, 4, 8, 16, 32, 64, 128, 256, ... seconds
-            status_forcelist=[429, 500, 502, 503, 504],
-            allowed_methods=["GET"],
+            status_forcelist=[429, 500, 502, 503, 504]
         )
         # initialize custom adapter for retry & timeout policies
         adapter = TimeoutHTTPAdapter(max_retries=retry_strategy, timeout=self.timeout)
