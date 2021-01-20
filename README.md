@@ -50,7 +50,7 @@ The `pydatagovgr` client supports out-of-the-box all the things you know (and lo
 
 - **authentication**: properly handles the authentication to data.gov.gr - all you have to do is provide a valid token. 
 - **persistent session**: making several requests to data.gov.gr reuses the same underlying connection.
-- **timeout policy**: the client will stop waiting for a response from data.gov.gr after some time.Defaults to 10 sec.
+- **timeout policy**: the client will stop waiting for a response from data.gov.gr after some time. Defaults to 10 sec.
 - **retry policy**: to account for potential server failures of lossy network connections, client automatically retries 
   with an exponential-backoff, to avoid harming the data.gov.gr. Defaults to a maximum of 3 retries.
 
