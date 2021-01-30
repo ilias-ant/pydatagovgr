@@ -21,7 +21,7 @@ class TimeoutHTTPAdapter(HTTPAdapter):
     def send(self, request, **kwargs):
 
         timeout = kwargs.get("timeout")
-        if timeout is None:  # ensure that the default timeout is used if an explicit timeout is not provided.
+        if timeout is None:
             kwargs["timeout"] = self.timeout
 
         return super().send(request, **kwargs)

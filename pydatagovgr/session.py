@@ -10,8 +10,13 @@ class DataGovSession(requests.Session):
 
     @staticmethod
     def _handle_response(response: requests.models.Response):
-        """
-        Handles the response received from data.gov.gr.
+        """Handles the response received from data.gov.gr.
+
+        Args:
+            response: The response object.
+
+        Returns:
+            The json-encoded content of a response, if any.
         """
         if not response.ok:
             raise DataGovResponseError(

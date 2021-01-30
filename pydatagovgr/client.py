@@ -16,6 +16,7 @@ class DataGovClient(BaseClient):
 
         Args:
             dataset: The name of the dataset.
+            **kwargs: Arbitrary keyword arguments.
 
         Returns:
             The dataset.

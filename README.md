@@ -71,7 +71,7 @@ from pydatagovgr import DataGovClient
 gov_client = DataGovClient(token='xoxb-1234-1243')
 
 # fetch the COVID-19 vaccination data for the 2021
-data = gov_client.query('mdg_emvolio', date_from='2021/01/01', date_to='2021/12/31')
+data = gov_client.query('mdg_emvolio', date_from='2021-01-01', date_to='2021-12-31')
 ```
 You can also use Python objects as arguments:
 

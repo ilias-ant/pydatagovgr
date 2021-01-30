@@ -22,7 +22,10 @@ class TestDataGovClient:
         assert len(responses.calls) == 1
         # with the proper headers
         assert "Authorization" in responses.calls[0].request.headers
-        assert responses.calls[0].request.headers["Authorization"] == "Token xoxb-1234-1243"
+        assert (
+            responses.calls[0].request.headers["Authorization"]
+            == "Token xoxb-1234-1243"
+        )
         assert responses.calls[0].request.headers["Connection"] == "keep-alive"
 
     @responses.activate
@@ -77,7 +80,10 @@ class TestDataGovClient:
 
         self.assert_proper_api_call()
         assert res == expected_content
-        assert {"date_from": "2021-01-01", "date_to": "2021-12-31"} == responses.calls[0].request.params
+        assert responses.calls[0].request.params == {
+            "date_from": "2021-01-01",
+            "date_to": "2021-12-31",
+        }
 
     @responses.activate
     def test_query_dataset_successful_with_pythonic_params(self, client):
@@ -99,7 +105,10 @@ class TestDataGovClient:
 
         self.assert_proper_api_call()
         assert res == expected_content
-        assert {"date_from": "2021-01-01", "date_to": "2021-12-31"} == responses.calls[0].request.params
+        assert responses.calls[0].request.params == {
+            "date_from": "2021-01-01",
+            "date_to": "2021-12-31",
+        }
 
     @responses.activate
     def test_query_dataset_invalid_json_content(self, client):

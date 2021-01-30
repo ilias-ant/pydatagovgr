@@ -29,11 +29,11 @@ class BaseClient(object):
         base_url: str = BASE_URL,
         timeout: int = 30,
         max_retries: int = 3,
-    ):
-        self.token = None if token is None else token.strip()
+    ) -> None:
         self.base_url = base_url
-        self.timeout = timeout
         self.max_retries = max_retries
+        self.timeout = timeout
+        self.token = None if token is None else token.strip()
         self.headers = self._get_headers()
         self.session = self._init_session()
 
@@ -51,6 +51,10 @@ class BaseClient(object):
 
     def _build_url(self, endpoint: str) -> str:
         """Joins the base data.gov.gr and an `endpoint` to form an absolute URL.
+
+        Args:
+            endpoint: The API endpoint.
+                e.g. 'query/mdg_emvolio'
 
         Returns:
             The built URL.
