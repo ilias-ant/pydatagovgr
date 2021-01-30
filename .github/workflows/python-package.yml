@@ -30,6 +30,9 @@ jobs:
       run: |
         poetry check
         poetry install
+    - name: Inspect Code Formatting
+      run: |
+        poetry run black . --check
     - name: Run Tests
       run: |
         poetry run pytest --cov --cov-report=xml

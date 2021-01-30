@@ -1,3 +1,4 @@
 [run]
 source = pydatagovgr
 omit = *__init__*
+       *tests*
