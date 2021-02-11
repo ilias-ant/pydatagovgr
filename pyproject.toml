@@ -45,7 +45,6 @@ exclude = '''
   | \.mypy_cache
   | \.tox
   | \.venv
-  | \.spiderman-env
   | \.pytest_cache
   | \.test_coverage
   | _build
