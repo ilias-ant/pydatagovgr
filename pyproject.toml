@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pydatagovgr"
-version = "0.1.7"
+version = "0.1.8"
 description = "A Pythonic client for the official https://data.gov.gr API."
 authors = ["ilias-ant <ilias.antonopoulos@yahoo.gr>"]
 readme = "README.md"

@@ -14,11 +14,13 @@ class BaseClient(object):
         token (str): A string specifying an xoxp or xoxb token.
         base_url (str): A string representing the data.gov.gr base URL.
             Default is 'https://data.gov.gr/api/v1/'.
-        timeout (int): The maximum number of seconds the client will wait
-            to connect and receive a response from data.gov.gr.
-            Default is 30 seconds.
+        timeout (int): The maximum number of seconds the client will will await
+            a response to its request from data.gov.gr. The data.gov.gr server can use
+            this to ensure that a timely response is generated - *however* this decision
+            lies entirely with the data.gov.gr and the client cannot enforce it somehow.
+            Defaults to 60 seconds.
         max_retries (int): The maximum number of retries in case of unsuccessful request.
-        Defaults to 3.
+            Defaults to 3.
     """
 
     BASE_URL = "https://data.gov.gr/api/v1/"
@@ -27,7 +29,7 @@ class BaseClient(object):
         self,
         token: Optional[str] = None,
         base_url: str = BASE_URL,
-        timeout: int = 30,
+        timeout: int = 60,
         max_retries: int = 3,
     ) -> None:
         self.base_url = base_url

@@ -21,8 +21,6 @@ class DataGovClient(BaseClient):
         Returns:
             The dataset.
         """
-        endpoint = f"query/{dataset}"
-
-        url = self._build_url(endpoint)
+        url = self._build_url(f"query/{dataset}")
 
         return self.session.get(url, params=kwargs, headers=self.headers)
