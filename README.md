@@ -99,6 +99,10 @@ gov = DataGovClient(token='xoxb-1234-1243', max_retries=3)
 gov = DataGovClient(token='xoxb-1234-1243', timeout=7, max_retries=3)
 ```
 
+## Related Projects
+
+- [go-data-gov-gr-sdk](https://github.com/ppapapetrou76/go-data-gov-gr-sdk): An SDK - written in Go - to access the data.gov.gr API.
+
 ## How to contribute
 
 If you wish to contribute, [this](CONTRIBUTING.md) is a great place to start!
