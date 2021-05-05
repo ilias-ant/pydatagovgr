@@ -72,7 +72,7 @@ closes #4242
 ```
 
 ## What are you talking about 😕? 
-If you are not familiar with the Github contributing process and all the above sound gibberish, despair not! You can always take a look at [this practical guide](https://www.gun.io/blog/how-to-github-fork-branch-and-pull-request). If again this does not help, please do contact me via email or via the issue tracker and i will be glad to help in any way!
+If you are not familiar with the Github contributing process and all the above sound gibberish, despair not! You can always take a look at [this very practical guide](https://github.com/firstcontributions/first-contributions). If again this does not help, please do contact me via email or via the issue tracker and i will be glad to help in any way!
 
 Thank you! :heart: 
 
