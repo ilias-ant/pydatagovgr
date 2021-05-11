@@ -58,9 +58,9 @@ The `pydatagovgr` client supports out-of-the-box all the things you know (and lo
 
 ## Not-So-Quick Usage
 
-The data.gov.gr API is currently organized into endpoints called **datasets**, each available via the `query` endpoint.
+The data.gov.gr API exposes, through its `api/v1/query` GET endpoint, various **datasets** from different topics.
 
-The `pydatagovgr` client provides a corresponding `query` method, through which every available dataset can be obtained.
+The `pydatagovgr` client thus provides a corresponding `query` method, through which every available dataset can be obtained.
 You can also pass additional arguments to filter the results accordingly. 
 
 ```python
