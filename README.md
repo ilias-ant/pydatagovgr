@@ -81,7 +81,7 @@ import datetime
 data = gov.query(
     'mdg_emvolio', 
     date_from=datetime.date(2021, 1, 1), 
-    date_to=datetime.date(1, 12, 31)
+    date_to=datetime.date(2021, 12, 31)
 )
 ```
 
