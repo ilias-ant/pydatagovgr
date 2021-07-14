@@ -1,6 +1,6 @@
 from typing import Optional
-
 from urllib.parse import urljoin
+
 from urllib3.util.retry import Retry
 
 from .adapters import TimeoutHTTPAdapter

@@ -34,6 +34,7 @@ jobs:
     - name: Inspect Code Formatting
       run: |
         poetry run black . --check
+        poetry run isort . --check
     - name: Run Tests
       run: |
         poetry run pytest --cov --cov-report=xml
