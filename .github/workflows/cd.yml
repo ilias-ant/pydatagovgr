@@ -1,6 +1,6 @@
 # This workflow will upload a Python Package using Poetry when a release is created.
 
-name: Upload Python Package to PyPI
+name: CD
 
 on:
   release:
