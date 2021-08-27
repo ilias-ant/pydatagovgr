@@ -1,6 +1,7 @@
 # pydatagovgr
 
-[![PyPI](https://img.shields.io/pypi/v/pydatagovgr?color=blue&label=PyPI&logo=PyPI&logoColor=white)](https://pypi.org/project/pydatagovgr/) [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pydatagovgr?logo=python&logoColor=white)](https://www.python.org/) [![codecov](https://codecov.io/gh/ilias-ant/pydatagovgr/branch/main/graph/badge.svg?token=2H0VB8I8IH)](https://codecov.io/gh/ilias-ant/pydatagovgr) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ilias-ant/pydatagovgr/CI)](https://github.com/ilias-ant/pydatagovgr/actions/workflows/ci.yml) [![PyPI - Wheel](https://img.shields.io/pypi/wheel/pydatagovgr?color=orange)](https://www.python.org/dev/peps/pep-0427/)
+[![PyPI](https://img.shields.io/pypi/v/pydatagovgr?color=blue&label=PyPI&logo=PyPI&logoColor=white)](https://pypi.org/project/pydatagovgr/) [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pydatagovgr?logo=python&logoColor=white)](https://www.python.org/) [![codecov](https://codecov.io/gh/ilias-ant/pydatagovgr/branch/main/graph/badge.svg?token=2H0VB8I8IH)](https://codecov.io/gh/ilias-ant/pydatagovgr) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ilias-ant/pydatagovgr/CI)](https://github.com/ilias-ant/pydatagovgr/actions/workflows/ci.yml) [![Documentation Status](https://readthedocs.org/projects/pydatagovgr/badge/?version=latest)](https://pydatagovgr.readthedocs.io/en/latest/?badge=latest)
+ [![PyPI - Wheel](https://img.shields.io/pypi/wheel/pydatagovgr?color=orange)](https://www.python.org/dev/peps/pep-0427/)
 
 
 A Pythonic client for the official [data.gov.gr](https://data.gov.gr) API. Aims to be an easy, intuitive and 
@@ -92,7 +93,7 @@ Apart from the authentication token, you can also configure the timeout and retr
 gov = DataGovClient(token='xoxb-1234-1243', timeout=7)
 
 # this client will retry at most 3 times, with an exponential-backoff
-# (i.e. each retry waits exponentially longer before occurs: 1, 2, 4, 8, 16, 32, 64, ... seconds)
+# (i.e. each retry waits exponentially longer before occurs: 1, 2, 4, 8, ...sec)
 gov = DataGovClient(token='xoxb-1234-1243', max_retries=3)
 
 # this client will respect both a timeout policy and a retry policy
@@ -113,5 +114,5 @@ Distributed under the [MIT License](LICENSE).
 
 ## Acknowledgements
 
-All rights are reserved by the official https://data.gov.gr site, its developers, its maintainers and the 
+All rights are reserved by the official [https://data.gov.gr](https://data.gov.gr) site, its developers, its maintainers and the 
 Hellenic Government.
