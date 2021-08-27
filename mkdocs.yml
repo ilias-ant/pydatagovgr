@@ -1,0 +1,52 @@
+site_name: pydatagovgr
+site_description: pydatagovgr documentation page
+site_author: ilias-ant
+
+repo_name: ilias-ant/pydatagovgr
+repo_url: https://github.com/ilias-ant/pydatagovgr
+edit_uri: ""
+
+theme:
+  name: material
+  locale: en
+  palette:
+  - scheme: default
+    primary: blue
+    accent: amber
+    toggle:
+      icon: material/toggle-switch-off-outline
+      name: Switch to dark mode
+  - scheme: slate
+    primary: blue
+    accent: amber
+    toggle:
+      icon: material/toggle-switch
+      name: Switch to light mode
+  features:
+    - navigation.instant
+    - search.suggest
+    - search.highlight
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+
+plugins:
+- search
+- mkdocstrings:
+    watch:
+      - pydatagovgr
+    default_handler: python
+
+nav:
+    - Home: index.md
+    - Installation: installation.md
+    - Features: features.md
+    - Usage:
+      - Quick: usage/quick.md
+      - Not-So-Quick: usage/not_so_quick.md
+    - API Reference: api.md
+    - Related Projects: related.md
+    - How to Contribute: contributing.md
+    - License: license.md
+    - Acknowledgements: acknowledgements.md
