@@ -50,3 +50,10 @@ nav:
     - How to Contribute: contributing.md
     - License: license.md
     - Acknowledgements: acknowledgements.md
+
+extra:
+    social:
+        - icon: fontawesome/brands/github-alt
+          link: 'https://github.com/ilias-ant'
+        - icon: fontawesome/brands/linkedin
+          link: 'https://www.linkedin.com/in/ilias-ant'
