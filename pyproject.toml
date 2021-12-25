@@ -27,7 +27,7 @@ classifiers = [
 "Bug Tracker" = "https://github.com/ilias-ant/pydatagovgr/issues"
 
 [tool.poetry.dependencies]
-python = ">=3.7,<3.10"
+python = ">=3.7,<3.11"
 requests = "~2.25.1"
 
 [tool.poetry.dev-dependencies]
