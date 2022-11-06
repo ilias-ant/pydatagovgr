@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pydatagovgr"
-version = "0.2.2"
+version = "0.3.0"
 description = "A Pythonic client for the official https://data.gov.gr API."
 authors = ["ilias-ant <ilias.antonopoulos@yahoo.gr>"]
 readme = "README.md"
@@ -27,7 +27,7 @@ classifiers = [
 "Bug Tracker" = "https://github.com/ilias-ant/pydatagovgr/issues"
 
 [tool.poetry.dependencies]
-python = ">=3.7,<3.11"
+python = ">=3.7,<3.12"
 requests = "~2.25.1"
 
 [tool.poetry.dev-dependencies]
