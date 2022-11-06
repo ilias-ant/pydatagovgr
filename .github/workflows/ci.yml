@@ -40,12 +40,12 @@ jobs:
       run: |
         poetry run pytest --cov --cov-report=xml
     - name: Upload Coverage Report to codecov.io
-      uses: codecov/codecov-action@v1
+      uses: codecov/codecov-action@v3
       with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          file: ./coverage.xml
+          files: ./coverage.xml
           flags: unittests
           fail_ci_if_error: true
+          verbose: true
     - name: Build
       run: |
         poetry build
