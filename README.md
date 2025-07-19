@@ -77,7 +77,7 @@ from pydatagovgr import DataGovClient
 
 gov = DataGovClient()
 
-# fetch the COVID-19 vaccination data for the 2021
+# fetch the sailing data
 sailing_data = gov.query('sailing_traffic', date_from='2025-01-01', date_to='2025-07-18')
 ```
 You can also use Python objects as arguments:

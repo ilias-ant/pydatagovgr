@@ -4,7 +4,7 @@
 from pydatagovgr import DataGovClient
 
 
-gov = DataGovClient(token='xoxb-1234-1243')
+gov = DataGovClient()
 
 # fetch public administration evaluation data
 evaluation_data = gov.query('public-administration-evaluation')
