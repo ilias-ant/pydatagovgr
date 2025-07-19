@@ -1,13 +1,13 @@
-[tool.poetry]
+[project]
 name = "pydatagovgr"
 version = "0.4.0"
 description = "A Pythonic client for the official https://data.gov.gr API."
-authors = ["ilias-ant <ilias.antonopoulos@yahoo.gr>"]
+authors = [
+    {name = "ilias-ant", email = "ilias.antonopoulos@yahoo.gr"}
+]
 readme = "README.md"
-license = "MIT"
-homepage = "https://pypi.org/project/pydatagovgr"
-documentation = "https://pydatagovgr.readthedocs.io"
-repository = "https://github.com/ilias-ant/pydatagovgr"
+license = {text = "MIT"}
+requires-python = ">=3.9,<3.13"
 keywords = ["client", "pip", "govgr", "open-data"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -20,15 +20,16 @@ classifiers = [
     "Operating System :: OS Independent",
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Programming Language :: Python :: 3 :: Only",
-    
+]
+dependencies = [
+    "requests>=2.32.4,<3.0.0",
 ]
 
-[tool.poetry.urls]
+[project.urls]
+Homepage = "https://pypi.org/project/pydatagovgr"
+Documentation = "https://pydatagovgr.readthedocs.io"
+Repository = "https://github.com/ilias-ant/pydatagovgr"
 "Bug Tracker" = "https://github.com/ilias-ant/pydatagovgr/issues"
-
-[tool.poetry.dependencies]
-python = ">=3.9,<3.13"
-requests = "~2.32.4"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.12.0"
