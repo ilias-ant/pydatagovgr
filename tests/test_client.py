@@ -24,21 +24,21 @@ class TestDataGovClient:
         assert responses.calls[0].request.headers["Connection"] == "keep-alive"
 
     @responses.activate
-    def test_query_dataset_unauthorized(self, client):
-        expected_body = '{"detail": "Λανθασμένο token"}'
+    def test_query_dataset_invalid_type(self, client):
+        expected_body = '{"type":["Το xml δεν είναι έγκυρη επιλογή."]}'
 
         responses.add(
             responses.GET,
             url="https://data.gov.gr/api/v1/query/mdg_emvolio",
             body=expected_body,
-            status=401,
+            status=400,
         )
 
         with pytest.raises(exceptions.DataGovResponseError) as exc:
-            client.query("mdg_emvolio")
+            client.query("mdg_emvolio", type="xml")
 
         self.assert_proper_api_call()
-        assert "401" in str(exc.value)
+        assert "400" in str(exc.value)
         assert expected_body in str(exc.value)
 
     @responses.activate

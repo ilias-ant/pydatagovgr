@@ -30,7 +30,7 @@ data = gov.query(
 )
 ```
 
-Apart from the authentication token, you can also configure the timeout and retry policies of your client. For example: 
+You can also configure the timeout and retry policies of your client. For example: 
 
 ```python
 # this client will stop waiting for a response after 7 seconds 
