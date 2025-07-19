@@ -34,9 +34,10 @@ markdown_extensions:
 plugins:
 - search
 - mkdocstrings:
-    watch:
-      - pydatagovgr
     default_handler: python
+    handlers:
+      python:
+        paths: [../pydatagovgr]
 
 nav:
     - Home: index.md
