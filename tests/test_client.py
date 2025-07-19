@@ -10,7 +10,7 @@ from pydatagovgr import exceptions
 def client():
     from pydatagovgr import client
 
-    return client.DataGovClient(token="xoxb-1234-1243")
+    return client.DataGovClient()
 
 
 class TestDataGovClient:
@@ -21,16 +21,10 @@ class TestDataGovClient:
         # assert that a single request was made
         assert len(responses.calls) == 1
         # with the proper headers
-        assert "Authorization" in responses.calls[0].request.headers
-        assert (
-            responses.calls[0].request.headers["Authorization"]
-            == "Token xoxb-1234-1243"
-        )
         assert responses.calls[0].request.headers["Connection"] == "keep-alive"
 
     @responses.activate
     def test_query_dataset_unauthorized(self, client):
-
         expected_body = '{"detail": "Λανθασμένο token"}'
 
         responses.add(
@@ -49,7 +43,6 @@ class TestDataGovClient:
 
     @responses.activate
     def test_query_dataset_successful(self, client):
-
         expected_content = [{"foo": "bar"}]
 
         responses.add(
@@ -66,7 +59,6 @@ class TestDataGovClient:
 
     @responses.activate
     def test_query_dataset_successful_with_params(self, client):
-
         expected_content = [{"foo": "bar"}]
 
         responses.add(
@@ -87,7 +79,6 @@ class TestDataGovClient:
 
     @responses.activate
     def test_query_dataset_successful_with_pythonic_params(self, client):
-
         expected_content = [{"foo": "bar"}]
 
         responses.add(
@@ -112,7 +103,6 @@ class TestDataGovClient:
 
     @responses.activate
     def test_query_dataset_invalid_json_content(self, client):
-
         responses.add(
             responses.GET,
             url="https://data.gov.gr/api/v1/query/mdg_emvolio",

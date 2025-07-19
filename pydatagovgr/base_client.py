@@ -11,7 +11,6 @@ class BaseClient(object):
     """This client handles constructing and sending HTTP requests to data.gov.gr.
 
     Attributes:
-        token (str): A string specifying an xoxp or xoxb token.
         base_url (str): A string representing the data.gov.gr base URL.
             Default is 'https://data.gov.gr/api/v1/'.
         timeout (int): The maximum number of seconds the client will will await
@@ -27,7 +26,6 @@ class BaseClient(object):
 
     def __init__(
         self,
-        token: Optional[str] = None,
         base_url: str = BASE_URL,
         timeout: int = 60,
         max_retries: int = 3,
@@ -35,21 +33,7 @@ class BaseClient(object):
         self.base_url = base_url
         self.max_retries = max_retries
         self.timeout = timeout
-        self.token = None if token is None else token.strip()
-        self.headers = self._get_headers()
         self.session = self._init_session()
-
-    def _get_headers(self) -> dict:
-        """Constructs the headers need for a request.
-
-        Returns:
-            The headers dictionary.
-                e.g. {
-                    'Authorization': 'Token xoxb-1234-1243',
-                }
-        """
-
-        return {"Authorization": f"Token {self.token}"}
 
     def _build_url(self, endpoint: str) -> str:
         """Joins the base data.gov.gr and an `endpoint` to form an absolute URL.
