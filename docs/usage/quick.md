@@ -13,7 +13,7 @@ evaluation_data = gov.query('public-administration-evaluation')
 evaluation_csv = gov.query('download/public-administration-evaluation', type='csv')
 
 # or JSON
-evaluation_csv = gov.query('download/public-administration-evaluation', type='json')
+evaluation_json = gov.query('download/public-administration-evaluation', type='json')
 
 # fetch the COVID-19 vaccination data
 covid_data = gov.query('mdg_emvolio', date_from='2024-01-01', date_to='2021-12-31')
