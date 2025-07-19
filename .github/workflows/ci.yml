@@ -40,13 +40,16 @@ jobs:
       run: |
         poetry check
         poetry install
+      shell: bash
     - name: Inspect Code Formatting
       run: |
         poetry run black . --check
         poetry run isort . --check
+      shell: bash
     - name: Run Tests
       run: |
         poetry run pytest --cov --cov-report=xml
+      shell: bash
     - name: Upload Coverage Report to codecov.io
       uses: codecov/codecov-action@v4
       with:
@@ -58,3 +61,4 @@ jobs:
     - name: Build
       run: |
         poetry build
+      shell: bash

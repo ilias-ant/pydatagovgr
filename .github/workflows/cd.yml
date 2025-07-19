@@ -27,6 +27,7 @@ jobs:
       run: |
         poetry check
         poetry install --only main
+      shell: bash
     - name: Build and Publish
       env:
         PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
@@ -34,3 +35,4 @@ jobs:
         poetry config pypi-token.pypi $PYPI_TOKEN
         poetry build
         poetry publish
+      shell: bash
