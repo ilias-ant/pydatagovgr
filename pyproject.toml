@@ -1,6 +1,6 @@
 [project]
 name = "pydatagovgr"
-version = "1.0.0"
+version = "1.0.1"
 description = "A Pythonic client for the official https://data.gov.gr API."
 authors = [
     {name = "ilias-ant", email = "ilias.antonopoulos@yahoo.gr"}

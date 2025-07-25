@@ -18,20 +18,25 @@ class DataGovSession(requests.Session):
         Returns:
             The json-encoded content of a response, if any.
         """
+
         if not response.ok:
             raise DataGovResponseError(
                 f"data.gov.gr error [{response.status_code}]: {response.text}"
             )
 
         try:
-            json_response_content = response.json()
+
+            if "type=csv" in response.request.path_url:
+                response_output = response
+            else:
+                response_output = response.json()
 
         except ValueError:
             raise DataGovResponseError(
                 f"data.gov.gr invalid JSON response: {response.text}"
             )
 
-        return json_response_content
+        return response_output
 
     def request(self, *args, **kwargs):
         """Wraps Session.request and handles the response."""

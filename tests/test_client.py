@@ -115,3 +115,18 @@ class TestDataGovClient:
 
         self.assert_proper_api_call()
         assert "invalid JSON response" in str(exc.value)
+
+    @responses.activate
+    def test_query_dataset_csv_type(self, client):
+        expected_body = "."
+
+        responses.add(
+            responses.GET,
+            url="https://data.gov.gr/api/v1/query/download/public-administration-evaluation?type=csv",
+            body=expected_body,
+            status=200,
+        )
+
+        res = client.query("download/public-administration-evaluation", type="csv")
+
+        assert res.content == bytes(expected_body, 'utf-8')

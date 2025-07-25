@@ -35,14 +35,8 @@ gov = DataGovClient()
 # fetch public administration evaluation data
 evaluation_data = gov.query('public-administration-evaluation')
 
-# you can also download them as CSV
-evaluation_csv = gov.query('download/public-administration-evaluation', type='csv')
-
-# or JSON
-evaluation_json = gov.query('download/public-administration-evaluation', type='json')
-
 # fetch the COVID-19 vaccination data
-covid_data = gov.query('mdg_emvolio', date_from='2024-01-01', date_to='2021-12-31')
+covid_data = gov.query('mdg_emvolio', date_from='2021-10-01', date_to='2021-12-31')
 
 # fetch data on Greece's internet traffic
 traffic_data = gov.query('internet_traffic', date_from='2025-06-15', date_to='2025-07-18')
@@ -91,6 +85,22 @@ data = gov.query(
     date_from=datetime.date(2025, 1, 1),
     date_to=datetime.date(2025, 7, 18)
 )
+```
+
+```python
+# you can also download them as CSV
+download = gov.query('download/public-administration-evaluation', type='csv')
+
+decoded_content = download.content.decode('utf-8')
+
+cr = csv.reader(decoded_content.splitlines(), delimiter=',')
+
+dataset = list(cr)
+for row in dataset:
+  print(row)
+
+# or in JSON
+download = gov.query('download/ekt-expenses-source', type='csv')
 ```
 
 You can also configure the timeout and retry policies of your client. For example: 
